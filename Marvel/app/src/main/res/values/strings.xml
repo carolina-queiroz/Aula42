@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Marvel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="texto_home">Lista com alguns heróis Marvel</string>
+    <string name="lista_nome_heroi">nome do heroi</string>
+    <string name="texto_detalhe_descricao">Rogue é uma mutante Nível Ômega, personagem de histórias em quadrinhos da editora Marvel Comics. Vampira é integrante de algumas equipes dos X-Men e dos Vingadores</string>
+    <string name="image_description">Arte com a heroína Vampira da Marvel</string>
+</resources>
