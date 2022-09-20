@@ -47,6 +47,7 @@ class PersonagensAdapter(
     class Viewholder(val binding: MarvelItemBinding): RecyclerView.ViewHolder(binding.root){
 
         fun exibirInformacoesView(personagem: Personagem){
+            binding.ivHeroi.setImageResource(personagem.getImagem())
             binding.tvNomeHeroi.text = personagem.getNome()
         }
     }

@@ -3,6 +3,7 @@ package com.example.marvel.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import com.example.marvel.CHAVE_PERSONAGEM
@@ -20,19 +21,29 @@ private lateinit var binding: FragmentDetalhePersonagensBinding
     ): View? {
         binding = FragmentDetalhePersonagensBinding.inflate(inflater, container, false)
         return binding.root
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         recuperarExibirDadosPersonagem()
     }
 
     private fun recuperarExibirDadosPersonagem() {
         val personagem = arguments?.getParcelable<Personagem>(CHAVE_PERSONAGEM)
         if (personagem != null){
-            binding.tvNomeDetalhe.text = personagem.getNome()
-            binding.tvDescricao.text = personagem.getDescricao()
+           exibirPersonagens(personagem)
         }
+    }
+
+    private fun exibirPersonagens(personagem: Personagem){
+        binding.ivHeroiDetalhe.setImageResource(personagem.getImagem())
+        binding.tvNomeDetalhe.text = personagem.getNome()
+        binding.tvDescricao.text = personagem.getDescricao()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            this.finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
